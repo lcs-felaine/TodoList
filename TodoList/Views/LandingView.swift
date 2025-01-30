@@ -11,6 +11,9 @@ struct LandingView: View {
     
     //MARK: Stored Properties
     
+    //The search text
+    @State var searchText = ""
+    
     //MARK: Computed Properties
     var body: some View {
         NavigationView{
@@ -22,6 +25,8 @@ struct LandingView: View {
                     Text("Music")
                     Text("English")
                 }
+                
+                .searchable(text: $searchText)
             }
             .navigationTitle("To-Do List")
         }
