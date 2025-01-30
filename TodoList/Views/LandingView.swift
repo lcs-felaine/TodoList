@@ -24,10 +24,37 @@ struct LandingView: View {
             VStack{
                 
                 List{
-                    Text("CS")
-                    Text("Music")
-                    Text("English")
-                }
+                    
+                    Label(
+                        title:{
+                            Text("CS")
+                        }, icon: {
+                            Image(systemName: "circle")
+                        }
+                    )
+                Label(
+                    title:{
+                        Text("Music")
+                    }, icon: {
+                        Image(systemName: "circle")
+                    }
+                )
+                Label(
+                    title:{
+                        Text("Chemistry")
+                    }, icon: {
+                        Image(systemName: "circle")
+                    }
+                )
+                Label(
+                    title:{
+                        Text("English")
+                    }, icon: {
+                        Image(systemName: "circle")
+                    }
+                )
+            }
+        }
                 
                 .searchable(text: $searchText)
                 
@@ -43,8 +70,8 @@ struct LandingView: View {
             }
             .navigationTitle("To-Do List")
         }
-    }
 }
+
     
     #Preview {
         LandingView()
