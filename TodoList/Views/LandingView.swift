@@ -24,42 +24,33 @@ struct LandingView: View {
             VStack{
                 
                 List{
-                    
-                    Label(
-                        title:{
-                            Text("CS")
-                        }, icon: {
-                            Image(systemName: "circle")
-                        }
+                
+                    itemView(
+                        title: "Music",
+                        done: false
                     )
-                Label(
-                    title:{
-                        Text("Music")
-                    }, icon: {
-                        Image(systemName: "circle")
-                    }
-                )
-                Label(
-                    title:{
-                        Text("Chemistry")
-                    }, icon: {
-                        Image(systemName: "circle")
-                    }
-                )
-                Label(
-                    title:{
-                        Text("English")
-                    }, icon: {
-                        Image(systemName: "circle")
-                    }
-                )
-            }
-        }
+                    
+                    itemView(
+                        title: "CS",
+                        done: true
+                    )
+                    
+                    itemView(
+                        title: "Chemistry",
+                        done: false
+                    )
+                    
+                    itemView(
+                        title: "English",
+                        done: false
+                    )
+        
+                }
                 
                 .searchable(text: $searchText)
                 
                 HStack{
-                    TextField("    Enter a to-do item", text: $newItemDescription )
+                    TextField("   Enter a to-do item", text: $newItemDescription )
                     
                     Button("ADD") {
                         //Add the new to-do item
@@ -68,11 +59,34 @@ struct LandingView: View {
                 }
                 .padding(20)
             }
+            
             .navigationTitle("To-Do List")
         }
+    }
 }
 
     
     #Preview {
         LandingView()
     }
+
+struct itemView: View {
+    
+    let title: String
+    let done : Bool
+    
+    var body: some View {
+        Label(
+            title:{
+                Text(title)
+            }, icon: {
+                if done == true  {
+                    Image(systemName: "checkmark.circle")
+                } else {
+                    Image(systemName: "circle")
+                }
+               
+            }
+        )
+    }
+}
