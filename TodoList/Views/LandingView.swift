@@ -25,26 +25,10 @@ struct LandingView: View {
                 
                 List{
                 
-                    itemView(
-                        title: "Music",
-                        done: false
-                    )
-                    
-                    itemView(
-                        title: "CS",
-                        done: true
-                    )
-                    
-                    itemView(
-                        title: "Chemistry",
-                        done: false
-                    )
-                    
-                    itemView(
-                        title: "English",
-                        done: false
-                    )
-        
+                    itemView(currentItem: firstItem)
+                    itemView(currentItem: secondItem)
+                    itemView(currentItem: thirdItem)
+                    itemView(currentItem: forthItem)
                 }
                 
                 .searchable(text: $searchText)
