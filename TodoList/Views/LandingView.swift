@@ -28,7 +28,7 @@ struct LandingView: View {
                 
                 List($todos) { $todo in
                 
-                   itemView(currentItem: todo)
+                   itemView(currentItem: $todo)
                         // Delete a to-do item
                         .swipeActions {
                             Button(
@@ -39,10 +39,7 @@ struct LandingView: View {
                                 }
                             )
                         }
-                    // Tap to mark as done
-                        .onTapGesture {
-                            todo.done.toggle()
-                        }
+                   
                     
                 }
                 
