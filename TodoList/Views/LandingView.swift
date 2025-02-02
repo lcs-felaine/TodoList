@@ -26,9 +26,19 @@ struct LandingView: View {
             
             VStack{
                 
-                List(todos){ todo in
+                List(todos) { todo in
                 
-                   ItemView(currentItem: todo)
+                   itemView(currentItem: todo)
+                        // Delete a to-do item
+                        .swipeActions {
+                            Button(
+                                "Delete",
+                                role: .destructive,
+                                action: {
+                                    delete(todo)
+                                }
+                            )
+                        }
                     
                 }
                 
@@ -42,7 +52,7 @@ struct LandingView: View {
                         createToDo(withTitle: newItemDescription)
                     }
                     .font(.caption)
-                    disabled(newItemDescription.isEmpty == true)
+                    .disabled(newItemDescription.isEmpty == true)
                 }
                 .padding(20)
             }
@@ -65,12 +75,15 @@ struct LandingView: View {
         
     }
     
-    
+    func delete(_ todo: ToDoItem){
+        
+        // Remove the provided to-do item om the array
+        todos.removeAll {  currentItem in
+            currentItem.id == todo.id
+        }
+    }
 }
 
-    
     #Preview {
         LandingView()
     }
-
-

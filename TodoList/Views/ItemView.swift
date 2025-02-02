@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemView: View {
+struct itemView: View {
     
     let currentItem: ToDoItem
     
@@ -25,9 +25,9 @@ struct ItemView: View {
 
 #Preview {
     List{
-        ItemView(currentItem: firstItem)
-        ItemView(currentItem: secondItem)
-        ItemView(currentItem: thirdItem)
-        ItemView(currentItem: forthItem)
+        itemView(currentItem: firstItem)
+        itemView(currentItem: secondItem)
+        itemView(currentItem: thirdItem)
+        itemView(currentItem: forthItem)
     }
 }
