@@ -27,11 +27,11 @@ struct itemView: View {
     }
 }
 
-#Preview {
-    List{
-        itemView(currentItem: Binding.constant(firstItem))
-        itemView(currentItem: Binding.constant(secondItem))
-        itemView(currentItem: Binding.constant(thirdItem))
-        itemView(currentItem: Binding.constant(forthItem))
-    }
-}
+//#Preview {
+//    List{
+//        itemView(currentItem: Binding.constant(firstItem))
+//        itemView(currentItem: Binding.constant(secondItem))
+//        itemView(currentItem: Binding.constant(thirdItem))
+//       itemView(currentItem: Binding.constant(forthItem))
+//    }
+//}
