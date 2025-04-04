@@ -9,7 +9,7 @@ import SwiftData
 
 @Model
 
-class ToDoItem: Identifiable {
+class TodoItem: Identifiable {
     var title : String
     var done : Bool
     
@@ -20,13 +20,13 @@ class ToDoItem: Identifiable {
 }
 
 
-let firstItem = ToDoItem(title: "CS", done: true)
+let firstItem = TodoItem(title: "CS", done: true)
 
-let secondItem = ToDoItem(title: "Music", done: true)
+let secondItem = TodoItem(title: "Music", done: true)
 
-let thirdItem = ToDoItem(title: "English", done: true)
+let thirdItem = TodoItem(title: "English", done: true)
 
-let forthItem = ToDoItem(title: "Math ", done: true)
+let forthItem = TodoItem(title: "Math ", done: true)
 
 
 let exampleItems = [
