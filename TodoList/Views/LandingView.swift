@@ -33,7 +33,7 @@ struct LandingView: View {
                 List {
                     ForEach(todos) { todo in
                         
-                        itemView(currentItem: todo)
+                        ItemView(currentItem: todo)
                  
                     }
                     .onDelete(perform: removeRows)

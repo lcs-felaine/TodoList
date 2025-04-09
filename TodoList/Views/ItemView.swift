@@ -5,9 +5,10 @@
 //  Created by Fang Elaine on 2025/2/1.
 //
 
+import SwiftData
 import SwiftUI
 
-struct itemView: View {
+struct ItemView: View {
     
     @Bindable var currentItem: TodoItem
     
@@ -23,15 +24,19 @@ struct itemView: View {
                     }
                
             }
+            
         )
     }
 }
 
-//#Preview {
-//    List{
-//        itemView(currentItem: Binding.constant(firstItem))
-//        itemView(currentItem: Binding.constant(secondItem))
-//        itemView(currentItem: Binding.constant(thirdItem))
-//       itemView(currentItem: Binding.constant(forthItem))
-//    }
-//}
+#Preview {
+    
+    let container = TodoItem.preview
+    
+    return List {
+        ItemView(currentItem: TodoItem.someItem)
+        ItemView(currentItem: TodoItem.anotherItem)
+    }
+    .modelContainer(container)
+    
+}
